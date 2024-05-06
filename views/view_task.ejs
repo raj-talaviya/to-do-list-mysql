@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Task</title>
+</head>
+<style>
+    .nav a{
+        margin: 10px 20px;
+    }
+</style>
+<body>
+    <div class="nav">
+        <a href="dashboard">Dashboard</a>
+        <a href="adduser"> Add User</a>
+        <a href="addtask"> Add Task</a>
+        <a href="manageuser"> Manage User</a>
+        <a href="viewuser"> View User</a>
+        <a href="viewtask">View Task</a>
+</div>
+
+<h1 align="center">View Task</h1>
+    
+<table border="" align="center">
+    <tr>
+        <th>ID</th>
+        <th>Task</th>
+        <th>User Name</th>
+        <th>Status</th>
+    </tr>
+
+    <% result.forEach(function(task){ %>
+        <tr>
+            <td><%= task.id %></td>
+            <td><%= task.task_name %></td>
+            <td><%= task.task_user %></td>
+            <td>
+                <% if(task.status=="Pending") { %>
+                    <b>Pending</b>
+                <% }else if(task.status=="Accept") { %>
+                    <b>Accept</b>
+                <% }else if(task.status=="Decline") { %>
+                    <b>Decline</b>
+                <% }else if(task.status=="Running") { %>
+                    <b>Running</b>
+                <% }else if(task.status=="Completed") { %>
+                    <b>Completed</b>
+                <% } %>
+            </td>
+        </tr>
+    <% }) %>
+
+</table>
+
+</body>
+</html>

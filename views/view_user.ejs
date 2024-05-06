@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View User</title>
+</head>
+<style>
+    .nav a{
+        margin: 10px 20px;
+    }
+</style>
+<body>
+    <div class="nav">
+        <a href="dashboard">Dashboard</a>
+        <a href="adduser"> Add User</a>
+        <a href="addtask"> Add Task</a>
+        <a href="manageuser"> Manage User</a>
+        <a href="viewUser"> View User</a>
+        <a href="viewtask">View Task</a>
+</div>
+<h1 align="center">View User</h1>
+    <table border="1" align="center" cellpadding="2">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+
+        <% result.forEach(function (user){%>
+            <tr>
+                <td><%=user.id%></td>
+                <td><%=user.name%></td>
+                <td><%=user.email%></td>
+                <td><%=user.password%></td>
+            </tr>
+        <%})%>
+    </table>
+</body>
+</html>

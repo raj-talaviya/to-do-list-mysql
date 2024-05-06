@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+</head>
+<style>
+    .nav a{
+        margin: 10px 20px;
+    }
+</style>
+<body>
+    <div class="nav">
+        <a href="dashboard">Dashboard</a>
+        <a href="adduser"> Add User</a>
+        <a href="addtask"> Add Task</a>
+        <a href="manageuser"> Manage User</a>
+        <a href="viewuser"> View User</a>
+        <a href="viewtask">View Task</a>
+</div>
+
+<h1 align="center">Add Task</h1>
+    <form method="post">
+        <table align="center">
+            <tr>
+                <td>Task Name:</td>
+                <td><input type="text" name="task_name"></td>
+            </tr>
+            <tr>
+                <td>Select Staff</td>
+                <td>
+                    <select name="user_id">
+                        <option disabled selected>Select User</option>
+                        <% result.forEach(function(user) {%>
+                        <option value="<%= user.name%>"><%= user.name%></option>
+                        <%})%>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Add"></td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>
